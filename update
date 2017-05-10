@@ -1,5 +1,5 @@
 #! /bin/sh
-apt-get -y install git-core
+apt-get -y install git-core dos2unix
 mkdir -p /update/tmpi
 git clone https://github.com/norrest/omv_minimserver.git /update/tmpi/
 chmod -R 777 /update/tmpi/
