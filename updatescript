@@ -9,7 +9,7 @@ echo "$ver"
 b="4.20"
 echo "$b"
 #if "$ver" < "$b"; 
-if [ "$b" < $ver ];
+if ( "$b" < $ver | bc);
 then
 cd /update/tmpi/
 echo "downloading new kernel...."
