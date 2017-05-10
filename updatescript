@@ -6,7 +6,7 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 #ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="4.20"
+b="4.1"
 echo "$b"
 if ( "$ver" \< "$b" | bc);
 then
