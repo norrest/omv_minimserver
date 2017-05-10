@@ -1,11 +1,11 @@
 #! /bin/sh
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/update /root
-a="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
-a="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-a="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
+ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 #ver="${ver//.}"          # remove periods (a single `/` would do here)
-echo "$a"
+echo "$ver"
 b="4.20"
 echo "$b"
 #if "$ver" < "$b"; 
