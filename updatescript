@@ -1,5 +1,6 @@
 #! /bin/sh
 sudo cp -pfR /update/tmpi/etc/ /
+sudo cp -pfR /update/tmpi/update /root
 ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 #ver="${ver//.}"          # remove periods (a single `/` would do here)
