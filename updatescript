@@ -5,7 +5,7 @@ ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="410"
+b="41000"
 #echo b
 if [ "$ver" \< "$b" ];
 then
