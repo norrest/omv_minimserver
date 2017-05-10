@@ -3,9 +3,9 @@ sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/update /root
 ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-ver="${ver//.}"          # remove periods (a single `/` would do here)
+#ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="41000"
+b="4.10"
 #echo b
 if [ "$ver" \< "$b" ];
 then
