@@ -1,0 +1,17 @@
+#! /bin/sh
+sudo cp -pfR /update/tmpi/etc/ /
+ver=$(uname -r)          # get kernel release version, e.g., "3.10.34-1-MANJARO"
+ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+#ver="${ver//.}"          # remove periods (a single `/` would do here)
+#echo "$ver"
+b="4.10"
+#echo b
+if [ "$ver" \< "$b" ];
+then
+cd /update/tmpi/
+wget http://digitall.in.ua/linux-headers.deb 
+wget http://digitall.in.ua/linux-image.deb
+dpkg -i *.deb
+fi
+    echo "ядро уже новое, обновления не требует"   
+       exit 1;
