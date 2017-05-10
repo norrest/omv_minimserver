@@ -16,7 +16,7 @@ wget http://digitall.in.ua/linux-headers.deb
 wget http://digitall.in.ua/linux-image.deb
 echo "update kernel, please wait....." 
 dpkg -i *.deb
-read -r -p "Kernel was updated! REBOOT??? [Y/n]" response
+read -r -p "Kernel was updated! REBOOT??? [Y(or Enter)/n]" response
  response=${response,,} # tolower
  if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
  sudo rm -R /update/tmpi && reboot
