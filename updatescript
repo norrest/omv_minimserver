@@ -20,6 +20,6 @@ read -r -p "Kernel was updated! REBOOT??? [Y/n]" response
     reboot
  fi
     exit 1;
-fi
+ fi
     echo " you kernel is latest"   
        exit 1;
