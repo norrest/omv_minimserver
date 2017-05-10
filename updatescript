@@ -8,8 +8,7 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 echo "$ver"
 b="4.20"
 echo "$b"
-#if "$ver" < "$b"; 
-if ( "$b" < $ver | bc);
+if [ "$ver" \< "$b" | bc];
 then
 cd /update/tmpi/
 echo "downloading new kernel...."
