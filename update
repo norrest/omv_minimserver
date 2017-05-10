@@ -1,5 +1,5 @@
 #! /bin/sh
-apt-get -y install git-core 
+apt-get -y --force-yes install git 
 mkdir -p /update/tmpi
 git clone https://github.com/norrest/omv_minimserver.git /update/tmpi/
 chmod -R 777 /update/tmpi/
@@ -7,4 +7,3 @@ cd /update/tmpi/
 sudo bash ./updatescript
 echo "ALL DONE!"
 exit 1;
-
