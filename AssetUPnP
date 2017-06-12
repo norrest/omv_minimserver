@@ -1,0 +1,22 @@
+#! /bin/sh
+read -r -p "Для того, чтобы переустановить AssetUPnP - нажмите ENTER сразу, если нет, нажмите сначата N и Enter потом!!" response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+echo -e "\e[31mУстанавливаем AssetUPnP\e[0m"
+rm -R /usr/bin/asset/
+cd /usr/bin
+sudo mkdir asset
+sudo chmod 777 asset
+cd asset
+wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz
+tar -zxvf AssetUPnP-Linux-x64.tar.gz
+rm *.gz
+echo -e "\e[31mПерегружаем, после перезагрузки в настройки сети должен появится Сервер AssetUPnP\e[0m"
+echo -e "\e[31mНа нем нажать правой кнопкой и нажать для настроек "Просмотр Веб страницы устройства"\e[0m"
+sleep 10
+reboot
+fi
+   exit 1;
+
+    exit 1;
+    
