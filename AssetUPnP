@@ -3,6 +3,7 @@ read -r -p "Для того, чтобы переустановить AssetUPnP -
 response=${response,,} # tolower
 if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
 echo -e "\e[31mУстанавливаем AssetUPnP\e[0m"
+killall AssetUPnP
 rm -R /usr/bin/asset/
 cd /usr/bin
 sudo mkdir asset
