@@ -6,7 +6,6 @@ echo -e "\e[31mУстанавливаем AssetUPnP\e[0m"
 killall AssetUPnP
 rm -R /tmp/Asset*
 rm -R /usr/bin/asset/
-rm -R /tmp/xm*
 rm -R /root/.dBpoweramp/
 rm -R /.dBpoweramp
 cd /usr/bin
