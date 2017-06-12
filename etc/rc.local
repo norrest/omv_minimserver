@@ -24,6 +24,4 @@ ifconfig eth2 up
 ifconfig mybridge up 
 dhclient mybridge 
 brctl stp mybridge on
-date +%Y%m%d -s "20170618"
-/usr/bin/asset/bin/AssetUPnP
 exit 0
