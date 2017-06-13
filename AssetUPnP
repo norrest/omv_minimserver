@@ -14,10 +14,12 @@ sudo chmod 777 asset
 cd asset
 wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz
 tar -zxvf AssetUPnP-Linux-x64.tar.gz
-rm *.gz
-echo -e "\e[31mПерегружаем, после перезагрузки в настройки сети должен появится Сервер AssetUPnP\e[0m"
-echo -e "\e[31mНа нем нажать правой кнопкой и нажать для настроек "Просмотр Веб страницы устройства"\e[0m"
 chmod -R 777 /usr/bin/asset/
+rm *.gz
+echo -e "\e[31mПожалуйста, подождите 30 секунд, и что бы не было написано на экране, нажмите кнопку выключения на сервере и после этого включите!\e[0m"
+sleep 15
+date +%Y%m%d -s "22000612" 
+/usr/bin/asset/bin/AssetUPnP
 sleep 15
 reboot
 fi
