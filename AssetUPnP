@@ -16,6 +16,7 @@ wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz
 tar -zxvf AssetUPnP-Linux-x64.tar.gz
 chmod -R 777 /usr/bin/asset/
 rm *.gz
+clear
 echo -e "\e[31mПожалуйста, подождите 30 секунд, и что бы не было написано на экране, нажмите кнопку выключения на сервере и после этого включите!\e[0m"
 sleep 15
 date +%Y%m%d -s "22000612" 
