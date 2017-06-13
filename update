@@ -2,6 +2,7 @@
 apt-get -y --force-yes install git 
 sudo rm -R /update/tmpi
 mkdir -p /update/tmpi
+export GIT_SSL_NO_VERIFY=1
 git clone https://github.com/norrest/omv_minimserver.git /update/tmpi/
 chmod -R 777 /update/tmpi/
 cd /update/tmpi/
