@@ -1,6 +1,6 @@
 Hi! 
 This is OMV_MINIMSERVER 
-Try to http://server from browser
+Для управления зайдите с браузера http://server 
 ------------------------------------
 Логин и пароль для web: admin/23456
 Логин и пароль для ssh-терминала: root/23456
