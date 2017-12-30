@@ -26,5 +26,5 @@ read -r -p "Kernel was updated! REBOOT??? [Enter/n]" response
  fi
  sudo bash ./AssetUPnP
  sudo rm -R /update/tmpi
-    echo " you kernel is latest"   
+    echo " у Вас последнее ядро, обновления не требуются!"   
     exit 1;
