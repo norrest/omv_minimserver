@@ -8,6 +8,7 @@ rm -R /tmp/Asset*
 rm -R /usr/bin/asset/
 rm -R /root/.dBpoweramp/
 rm -R /.dBpoweramp
+rm -r /root/Ass*
 cd /usr/bin
 sudo mkdir asset
 sudo chmod 777 asset
@@ -16,6 +17,7 @@ wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz
 tar -zxvf AssetUPnP-Linux-x64.tar.gz  
 cp -pfR  /root/Asset-R6-Linux-x64-trial/bin/ /usr/bin/asset/
 chmod -R 777 /usr/bin/asset/
+rm -r /root/Ass*
 rm *.gz
 clear
 echo -e "\e[31mПожалуйста, подождите 30 секунд, и что бы не было написано на экране, нажмите кнопку выключения на сервере и после этого включите!\e[0m"
