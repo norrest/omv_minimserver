@@ -13,8 +13,8 @@ sudo mkdir asset
 sudo chmod 777 asset
 cd /root
 wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz 
-tar -zxvf /root/AssetUPnP-Linux-x64.tar.gz /root/asset/
-cp /root/asset/Asset-R6-Linux-x64-trial/* /usr/bin/asset/
+tar -zxvf AssetUPnP-Linux-x64.tar.gz  
+cp -pfR  /root/Asset-R6-Linux-x64-trial/bin/ /usr/bin/asset/
 chmod -R 777 /usr/bin/asset/
 rm *.gz
 clear
