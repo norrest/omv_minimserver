@@ -2,47 +2,59 @@
 umount /dev/sda2 -l
 umount /dev/sda3 -l
 umount /dev/sda4 -l
+umount /dev/sda5 -l
 umount /dev/sdb1 -l
 umount /dev/sdb2 -l
 umount /dev/sdb3 -l
 umount /dev/sdb4 -l
+umount /dev/sdb5 -l
 umount /dev/sdc1 -l
 umount /dev/sdc2 -l
 umount /dev/sdc3 -l
 umount /dev/sdc4 -l
+umount /dev/sdc5 -l
 umount /dev/sdd1 -l
 umount /dev/sdd2 -l
 umount /dev/sdd3 -l
 umount /dev/sdd4 -l 
+umount /dev/sdd5 -l 
 e2fsck -y -f /dev/sda2  
 e2fsck -y -f /dev/sda3  
 e2fsck -y -f /dev/sda4  
 e2fsck -y -f /dev/sdb1  
+e2fsck -y -f /dev/sda5
 e2fsck -y -f /dev/sdb2  
 e2fsck -y -f /dev/sdb3  
-e2fsck -y -f /dev/sdb4  
+e2fsck -y -f /dev/sdb4 
+e2fsck -y -f /dev/sdb5
 e2fsck -y -f /dev/sdc1  
 e2fsck -y -f /dev/sdc2  
 e2fsck -y -f /dev/sdc3  
-e2fsck -y -f /dev/sdc4  
+e2fsck -y -f /dev/sdc4 
+e2fsck -y -f /dev/sdc5
 e2fsck -y -f /dev/sdd1  
 e2fsck -y -f /dev/sdd2  
 e2fsck -y -f /dev/sdd3  
 e2fsck -y -f /dev/sdd4  
+e2fsck -y -f /dev/sdd5
 tune2fs -m 0 /dev/sda2  
 tune2fs -m 0 /dev/sda3  
 tune2fs -m 0 /dev/sda4  
+tune2fs -m 0 /dev/sda5
 tune2fs -m 0 /dev/sdb1  
 tune2fs -m 0 /dev/sdb2  
 tune2fs -m 0 /dev/sdb3  
 tune2fs -m 0 /dev/sdb4  
+tune2fs -m 0 /dev/sdb5
 tune2fs -m 0 /dev/sdc1  
 tune2fs -m 0 /dev/sdc2  
 tune2fs -m 0 /dev/sdc3  
 tune2fs -m 0 /dev/sdc4  
+tune2fs -m 0 /dev/sdc5
 tune2fs -m 0 /dev/sdd1  
 tune2fs -m 0 /dev/sdd2  
 tune2fs -m 0 /dev/sdd3  
 tune2fs -m 0 /dev/sdd4  
+tune2fs -m 0 /dev/sdd5
 echo "проверка выполнена!! перезагрузка системы!"
 reboot
