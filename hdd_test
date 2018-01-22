@@ -28,6 +28,21 @@ e2fsck -y -f /dev/sdc4
 e2fsck -y -f /dev/sdd1  
 e2fsck -y -f /dev/sdd2  
 e2fsck -y -f /dev/sdd3  
-e2fsck -y -f /dev/sdd4   
+e2fsck -y -f /dev/sdd4  
+tune2fs -m 0 /dev/sda2  
+tune2fs -m 0 /dev/sda3  
+tune2fs -m 0 /dev/sda4  
+tune2fs -m 0 /dev/sdb1  
+tune2fs -m 0 /dev/sdb2  
+tune2fs -m 0 /dev/sdb3  
+tune2fs -m 0 /dev/sdb4  
+tune2fs -m 0 /dev/sdc1  
+tune2fs -m 0 /dev/sdc2  
+tune2fs -m 0 /dev/sdc3  
+tune2fs -m 0 /dev/sdc4  
+tune2fs -m 0 /dev/sdd1  
+tune2fs -m 0 /dev/sdd2  
+tune2fs -m 0 /dev/sdd3  
+tune2fs -m 0 /dev/sdd4  
 echo "проверка выполнена!! перезагрузка системы!"
 reboot
