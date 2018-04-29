@@ -22,7 +22,7 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="415"
+b="4151805201800"
 echo "$b"
 if [ "$ver" != "$b" ];
 then
