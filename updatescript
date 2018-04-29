@@ -4,6 +4,7 @@ sudo cp -pfR /update/tmpi/update /root
 sudo cp -pfR /update/tmpi/hdd_test /root
 sed -i '/[On]MV_MONIT_SERVICE_FILESYSTEM/d' /etc/default/openmediavault
 echo "OMV_MONIT_SERVICE_FILESYSTEM_SPACEUSAGE=97" >> /etc/default/openmediavault
+sudo apt-get purge -y $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | head -n -1)
 omv-mkconf collectd
 monit restart collectd
 miver="$(ls /opt/minimserver/ | grep minimserver | cut -d "0" -f 2)" 
@@ -21,15 +22,16 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="414"
+b="415"
 echo "$b"
 if [ "$ver" != "$b" ];
 then
 cd /update/tmpi/
-echo "downloading new kernel...."
-wget http://digitall.in.ua/linux-headers.deb 
-wget http://digitall.in.ua/linux-image.deb
-echo "update kernel, please wait....." 
+echo "Найдены новые ядра для установки"
+wget http://digitall.in.ua/linux-headers-4.15.18052018.00_1_amd64.deb
+wget http://digitall.in.ua/linux-image-4.15.18052018.00_1_amd64.deb
+wget http://digitall.in.ua/linux-libc-dev_1_amd64.deb
+echo "Начинаем обновлять ядра....." 
 dpkg -i *.deb
 read -r -p "Ядро обновлено, перегрузить? (Жмите Enter)" response
  response=${response,,} # tolower
