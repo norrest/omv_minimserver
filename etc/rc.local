@@ -10,7 +10,7 @@
 # bits.
 #
 # By default this script does nothing.
-sleep 10
+sleep 6
 ifconfig eth0 0.0.0.0 down
 ifconfig eth1 0.0.0.0 down
 ifconfig eth2 0.0.0.0 down
