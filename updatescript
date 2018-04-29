@@ -40,9 +40,9 @@ read -r -p "Ядро обновлено, перегрузить? (Жмите Ent
  fi
     exit 0;
  fi
+ echo " у Вас последнее ядро, обновления не требуются!"   
  sudo bash ./AssetUPnP
  sudo rm -R /update/tmpi
-    echo " у Вас последнее ядро, обновления не требуются!"   
     sleep 3
     reboot
     exit 0;
