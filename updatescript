@@ -6,9 +6,9 @@ sed -i '/[On]MV_MONIT_SERVICE_FILESYSTEM/d' /etc/default/openmediavault
 echo "OMV_MONIT_SERVICE_FILESYSTEM_SPACEUSAGE=97" >> /etc/default/openmediavault
 omv-mkconf collectd
 monit restart collectd
-ver="$(ls /opt/minimserver/ | grep minimserver)" 
+miver="$(ls /opt/minimserver/ | grep minimserver)" 
 newver="minimserver-0.8.5.2"
-if [ "$ver" != "$b" ];
+if [ "$miver" != "$b" ];
 then
 ls /opt/minimserver/ | grep minimserver
 wget http://jminim.com/brac/MinimServer-0.8.5.2-linux-intel.tar.gz
