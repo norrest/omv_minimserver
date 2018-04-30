@@ -20,14 +20,13 @@ chmod -R 777 /usr/bin/asset/
 rm -r /root/Ass*
 rm *.gz
 clear
-echo -e "\e[31mПожалуйста, подождите 30 секунд, и что бы не было написано на экране, нажмите кнопку выключения на сервере и после этого включите!\e[0m"
-sleep 15
+echo -e "\e[31mПерезагрузка через 20 секунд!\e[0m"
+sleep 5
 date +%Y%m%d -s "22000612" 
-/usr/bin/asset/bin/AssetUPnP
-sleep 15
+/usr/bin/asset/bin/AssetUPnP&sleep 15&&reboot
+ 
 reboot
 fi
-   exit 1;
-
-    exit 1;
+   exit 0;
+   exit 0;
     
