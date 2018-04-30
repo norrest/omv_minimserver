@@ -4,6 +4,8 @@ sudo cp -pfR /update/tmpi/update /root
 sudo cp -pfR /update/tmpi/hdd_test /root
 sed -i '/[On]MV_MONIT_SERVICE_FILESYSTEM/d' /etc/default/openmediavault
 echo "OMV_MONIT_SERVICE_FILESYSTEM_SPACEUSAGE=97" >> /etc/default/openmediavault
+apt-get update
+apt-get -f -y install
 apt-get install -y --force-yes exfat-fuse exfat-utils
 sudo apt-get purge -y $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | head -n -1)
 omv-mkconf collectd
