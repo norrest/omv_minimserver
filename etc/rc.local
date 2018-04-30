@@ -25,5 +25,6 @@ ifconfig mybridge up
 dhclient mybridge 
 brctl stp mybridge on
 sleep 2
+sudo chmod -R 777 /srv/*
 service smbd restart
 exit 0
