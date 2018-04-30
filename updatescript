@@ -10,9 +10,7 @@ apt-get install -y --force-yes exfat-fuse exfat-utils
 sudo apt-get purge -y $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | head -n -1)
 omv-mkconf collectd
 monit restart collectd
-setenforce 0
-sed -i '/SELINUX/d' /etc/selinux/config
-echo "SELINUX=disabled" >> /etc/selinux/config
+(echo root; echo 23456) | smbpasswd -a -s root
 miver="$(ls /opt/minimserver/ | grep minimserver | cut -d "0" -f 2)" 
 miver="${miver%.*-*}"        # remove suffix starting with '.' and containing '-'
 miver="${miver//.}"          # remove periods (a single `/` would do here)
