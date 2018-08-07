@@ -30,14 +30,14 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="41710"
+b="41711"
 echo "$b"
 if [ "$ver" != "$b" ];
 then
 cd /update/tmpi/
 echo "Найдены новые ядра для установки"
-wget http://digitall.in.ua/linux-headers-4.17.10_01_amd64.deb
-wget http://digitall.in.ua/linux-image-4.17.10_01_amd64.deb
+wget http://digitall.in.ua/linux-headers-4.17.11_01_amd64.deb
+wget http://digitall.in.ua/linux-image-4.17.11_01_amd64.deb
 echo "Начинаем обновлять ядра....." 
 dpkg -i *.deb
 read -r -p "Ядро обновлено, перегрузить? (Жмите Enter)" response
