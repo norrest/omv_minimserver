@@ -10,6 +10,9 @@
 # bits.
 #
 # By default this script does nothing.
+quotaoff -a
+quotaoff --all 
+update-rc.d quota disable
 sleep 6
 ifconfig eth0 0.0.0.0 down
 ifconfig eth1 0.0.0.0 down
