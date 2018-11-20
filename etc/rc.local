@@ -13,7 +13,7 @@
 quotaoff -a
 quotaoff --all 
 update-rc.d quota disable
-sleep 6
+sleep 3
 ifconfig eth0 0.0.0.0 down
 ifconfig eth1 0.0.0.0 down
 ifconfig eth2 0.0.0.0 down
@@ -27,7 +27,7 @@ ifconfig eth2 up
 ifconfig mybridge up 
 dhclient mybridge 
 brctl stp mybridge on
-sleep 2
+sleep 1
 sudo chmod -R 777 /srv/*
 service smbd restart
 exit 0
