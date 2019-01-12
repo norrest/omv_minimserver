@@ -12,6 +12,7 @@
 # By default this script does nothing.
 quotaoff -a
 quotaoff --all 
+chmod -R 777 /tmp/*
 update-rc.d quota disable
 sleep 3
 ifconfig eth0 0.0.0.0 down
