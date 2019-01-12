@@ -15,7 +15,7 @@ sudo chmod 777 asset
 cd /root
 wget http://www.dbpoweramp.com/install/AssetUPnP-Linux-x64.tar.gz 
 tar -zxvf AssetUPnP-Linux-x64.tar.gz  
-cp -pfR  /root/Asset-R6-Linux-x64-trial/bin/ /usr/bin/asset/
+cp -pfR  /root/Asset-R6.1-Linux-x64-trial/bin/ /usr/bin/asset/
 chmod -R 777 /usr/bin/asset/
 rm -r /root/Ass*
 rm *.gz
