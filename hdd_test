@@ -1,4 +1,5 @@
 #! /bin/sh
+timedatectl set-local-rtc 0
 umount /dev/sda2 -l
 umount /dev/sda3 -l
 umount /dev/sda4 -l
