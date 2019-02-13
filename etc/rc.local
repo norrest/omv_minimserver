@@ -18,13 +18,16 @@ sleep 3
 ifconfig eth0 0.0.0.0 down
 ifconfig eth1 0.0.0.0 down
 ifconfig eth2 0.0.0.0 down
+ifconfig eth3 0.0.0.0 down
 brctl addbr mybridge
 brctl addif mybridge eth0
 brctl addif mybridge eth1
 brctl addif mybridge eth2
+brctl addif mybridge eth3
 ifconfig eth0 up
 ifconfig eth1 up 
 ifconfig eth2 up 
+ifconfig eth3 up 
 ifconfig mybridge up 
 dhclient mybridge 
 brctl stp mybridge on
