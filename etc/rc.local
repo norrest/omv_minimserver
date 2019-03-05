@@ -19,15 +19,33 @@ ifconfig eth0 0.0.0.0 down
 ifconfig eth1 0.0.0.0 down
 ifconfig eth2 0.0.0.0 down
 ifconfig eth3 0.0.0.0 down
+ifconfig rename0 0.0.0.0 down
+ifconfig rename1 0.0.0.0 down
+ifconfig rename2 0.0.0.0 down
+ifconfig rename3 0.0.0.0 down
+ifconfig rename4 0.0.0.0 down
+ifconfig rename5 0.0.0.0 down
 brctl addbr mybridge
 brctl addif mybridge eth0
 brctl addif mybridge eth1
 brctl addif mybridge eth2
 brctl addif mybridge eth3
+brctl addif mybridge rename0
+brctl addif mybridge rename1
+brctl addif mybridge rename2
+brctl addif mybridge rename3
+brctl addif mybridge rename4
+brctl addif mybridge rename5
 ifconfig eth0 up
 ifconfig eth1 up 
 ifconfig eth2 up 
 ifconfig eth3 up 
+ifconfig rename0 up 
+ifconfig rename1 up 
+ifconfig rename2 up 
+ifconfig rename3 up 
+ifconfig rename4 up 
+ifconfig rename5 up 
 ifconfig mybridge up 
 dhclient mybridge 
 brctl stp mybridge on
