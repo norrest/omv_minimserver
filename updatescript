@@ -2,6 +2,7 @@
 sudo cp -pfR /update/tmpi/etc/ /
 sudo cp -pfR /update/tmpi/update /root
 sudo cp -pfR /update/tmpi/hdd_test /root
+sudo cp -pfR /update/tmpi/xxx /root
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 sudo swapoff -a
 sed -i '/[On]MV_MONIT_SERVICE_FILESYSTEM/d' /etc/default/openmediavault
