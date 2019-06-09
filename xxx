@@ -1,0 +1,11 @@
+apt-get update
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install ffmpeg 
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install libav-tools
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install curl
+apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install cifs-utils
+curl -O http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh
+chmod +x roonserver-installer-linuxx64.sh 
+yes | sudo ./roonserver-installer-linuxx64.sh yes
+echo "127.0.0.1 accounts5.roonlabs.com" >> /etc/hosts
+chmod +x ./rkm_lin
+yes | yes | yes |./rkm_lin -i rs
