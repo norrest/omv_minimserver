@@ -8,5 +8,7 @@ curl -O http://download.roonlabs.com/builds/roonserver-installer-linuxx64.sh
 chmod +x roonserver-installer-linuxx64.sh 
 yes | sudo ./roonserver-installer-linuxx64.sh yes
 echo "127.0.0.1 accounts5.roonlabs.com" >> /etc/hosts
+echo "127.0.0.1 updates.roonlabs.com" >> /etc/hosts
+echo "127.0.0.1 *.roonlabs.com" >> /etc/hosts
 chmod +x ./rkm_lin
 yes | yes | yes |./rkm_lin -i rs
