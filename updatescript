@@ -12,6 +12,8 @@ ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
 apt-get update
 apt-get -f -y install
 apt-get install -y --force-yes exfat-fuse exfat-utils quota
+sudo apt-get install bzip2 -y
+sudo apt-get install tar -y
 sudo apt-get purge -y $(dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | head -n -1)
 omv-mkconf collectd
 monit restart collectd
