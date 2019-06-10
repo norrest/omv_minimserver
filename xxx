@@ -1,4 +1,5 @@
 yes | sudo ./roonserver-installer-linuxx64.sh uninstall
+rm -R *.tar
 apt-get update
 apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install ffmpeg 
 apt-get -y -o Dpkg::Options::="--force-confold" -o Dpkg::Options::="--force-confold" install libav-tools
