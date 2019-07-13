@@ -5,6 +5,7 @@ sudo cp -pfR /update/tmpi/hdd_test /root
 sudo cp -pfR /update/tmpi/xxx /root
 sudo cp -pfR /update/tmpi/rkm_lin /root
 sudo cp -pfR /update/tmpi/deleteasset /root
+bash /opt/minimserver/minimserver-0.8.5.2/bin/setup enable_autostart
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 sudo swapoff -a
 sed -i '/[On]MV_MONIT_SERVICE_FILESYSTEM/d' /etc/default/openmediavault
