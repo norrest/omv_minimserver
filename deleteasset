@@ -1,0 +1,12 @@
+#! /bin/sh
+read -r -p "Для того, чтобы удалить AssetUPnP - нажмите "ENTER", если надобности нет нажмите сначала "N"/"n" (либо другой символ) и только потом "ENTER"(его переустанавливать не обязательно, это нужно только в случае, когда требуется сбросить лицензию для проигрывания DSD) " response
+response=${response,,} # tolower
+if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+echo -e "\e[31mУдаляем AssetUPnP\e[0m"
+killall AssetUPnP
+rm -R /tmp/Asset*
+rm -R /usr/bin/asset/
+rm -R /root/.dBpoweramp/
+rm -R /.dBpoweramp
+rm -r /root/Ass*
+exit 0;
