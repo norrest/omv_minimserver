@@ -28,8 +28,8 @@ miver="${miver//.}"          # remove periods (a single `/` would do here)
 newver="852"
   if [ "$miver" -ne "$newver" ];
 then
-wget http://jminim.com/brac/MinimServer-0.8.5.2-linux-intel.tar.gz
-/opt/minimserver/bin/update MinimServer-0.8.5.2-linux-intel.tar.gz
+wget https://minimworld.com/files/714e0b628bfe7a94d8ec9da33eddbf17/MinimServer-2.0.16-linux-intel.tar.gz
+/opt/minimserver/bin/update MinimServer-2.0.16-linux-intel.tar.gz
 fi
 chmod 644 /etc/crontab
 ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
@@ -37,7 +37,7 @@ ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
 ver="${ver//.}"          # remove periods (a single `/` would do here)
 echo "$ver"
-b="5117"
+b=".16"
 echo "$b"
 if [ "$ver" != "$b" ];
 then
