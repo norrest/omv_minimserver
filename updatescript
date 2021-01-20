@@ -22,10 +22,10 @@ monit restart collectd
 sudo chown -R root:root /srv/*
 sudo chmod -R 777 /srv/*
 (echo 23456; echo 23456) | smbpasswd -a -s root
-miver="$(ls /opt/minimserver/ | grep minimserver | cut -d "0" -f 2)" 
+miver="$(ls /opt/minimserver/ | grep minimserver | cut -d "1" -f 2)" 
 miver="${miver%.*-*}"        # remove suffix starting with '.' and containing '-'
 miver="${miver//.}"          # remove periods (a single `/` would do here)
-newver=".16"
+newver="6"
 if [ "$miver" -ne "$newver" ];
 then
 wget https://minimworld.com/files/714e0b628bfe7a94d8ec9da33eddbf17/MinimServer-2.0.16-linux-intel.tar.gz
