@@ -26,7 +26,7 @@ miver="$(ls /opt/minimserver/ | grep minimserver | cut -d "0" -f 2)"
 miver="${miver%.*-*}"        # remove suffix starting with '.' and containing '-'
 miver="${miver//.}"          # remove periods (a single `/` would do here)
 newver=".16"
-  if [ "$miver" -ne "$newver" ];
+if [ "$miver" -ne "$newver" ];
 then
 wget https://minimworld.com/files/714e0b628bfe7a94d8ec9da33eddbf17/MinimServer-2.0.16-linux-intel.tar.gz
 /opt/minimserver/bin/update MinimServer-2.0.16-linux-intel.tar.gz
