@@ -13,6 +13,7 @@ echo "OMV_MONIT_SERVICE_FILESYSTEM_SPACEUSAGE=97" >> /etc/default/openmediavault
 ln -s /dev/null /etc/udev/rules.d/80-net-name-slot.rules
 apt-get update
 apt-get -f -y install
+apt-get install -y debian-keyring debian-archive-keyring
 apt-get install -y --force-yes exfat-fuse exfat-utils quota
 sudo apt-get install bzip2 -y
 sudo apt-get install tar -y
