@@ -32,7 +32,7 @@ echo "$miver"
 newver="20"
 if [ "$miver" -ne "$newver" ];
 then
-wget https://minimworld.com/files/714e0b628bfe7a94d8ec9da33eddbf17/MinimServer-2.0.16-linux-intel.tar.gz
+wget http://digitall.in.ua/MinimServer-2.0.16-linux-intel.tar.gz
 /opt/minimserver/bin/update MinimServer-2.0.16-linux-intel.tar.gz
 fi
 chmod 644 /etc/crontab
