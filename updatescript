@@ -24,16 +24,13 @@ monit restart collectd
 sudo chown -R root:root /srv/*
 sudo chmod -R 777 /srv/*
 (echo 23456; echo 23456) | smbpasswd -a -s root
-miver="$(ls /opt/minimserver/ | grep minimserver | cut -c13- | rev | cut -c3- | rev)" 
-miver="${miver%.*-*}"        # remove suffix starting with '.' and containing '-'
-miver="${miver%.*-*}"        # remove suffix starting with '.' and containing '-'
-miver="${miver//.}"          # remove periods (a single `/` would do here)
+miver="$(ls /opt/minimserver/ | grep minimserver | cut -c13- | tr . 0)" 
 echo "$miver"
-newver="20"
+newver="200018"
 if [ "$miver" -ne "$newver" ];
 then
-wget http://digitall.in.ua/MinimServer-2.0.16-linux-intel.tar.gz
-/opt/minimserver/bin/update MinimServer-2.0.16-linux-intel.tar.gz
+wget http://digitall.in.ua/MinimServer-2.0.18-linux-intel.tar.gz
+/opt/minimserver/bin/update MinimServer-2.0.18-linux-intel.tar.gz
 fi
 chmod 644 /etc/crontab
 ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
@@ -59,7 +56,7 @@ read -r -p "Ядро обновлено, перегрузить? (Жмите Ent
     exit 0;
  fi
  echo " у Вас последнее ядро, обновления не требуются!"   
- sudo bash ./AssetUPnP
+ # sudo bash ./AssetUPnP
  sudo rm -R /update/tmpi
     sleep 3
     reboot
