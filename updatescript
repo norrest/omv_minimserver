@@ -24,6 +24,7 @@ omv-mkconf collectd
 monit restart collectd
 sudo chown -R root:root /srv/*
 sudo chmod -R 777 /srv/*
+sudo apt-get autoremove
 (echo 23456; echo 23456) | smbpasswd -a -s root
 miver="$(ls /opt/minimserver/ | grep minimserver | cut -c13- | tr . 0)" 
 echo "$miver"
