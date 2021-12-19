@@ -5,6 +5,12 @@ sudo cp -pfR /update/tmpi/hdd_test /root
 sudo cp -pfR /update/tmpi/xxx /root
 sudo cp -pfR /update/tmpi/rkm_lin /root
 sudo cp -pfR /update/tmpi/deleteasset /root
+killall AssetUPnP
+rm -R /tmp/Asset*
+rm -R /usr/bin/asset/
+rm -R /root/.dBpoweramp/
+rm -R /.dBpoweramp
+rm -r /root/Ass*
 bash /opt/minimserver/minimserver-0.8.5.2/bin/setup enable_autostart
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 sudo swapoff -a
@@ -59,7 +65,8 @@ read -r -p "Ядро обновлено, перегрузить? (Жмите Ent
  echo " у Вас последнее ядро, обновления не требуются!"   
  # sudo bash ./AssetUPnP
  sudo rm -R /update/tmpi
-    sleep 3
+ sudo apt-get purge linux-image-4.1*
+    sleep 5
     reboot
     exit 0;
        exit 0;
