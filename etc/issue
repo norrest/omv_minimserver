@@ -5,7 +5,7 @@ This is NORREST OMV_MINIMSERVER
 Для настройки сервера, необходимо зайти c браузера http://\4 или  http://\n
 -
 Чтобы настроить minimserver, зайдите по адресу http://\4:9790/ 
-Не забывайте для minimserver "Content directory указывать" /srv
+Не забывайте для minimserver в поле "Content directory указывать" /srv
 -
 ------------------------------------
 Версия ядра \r 
