@@ -47,7 +47,7 @@ then
 cd /update/tmpi/
 echo "Найдены новые ядра для установки"
 wget http://digitall.in.ua/linux-headers-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
-wget http://linux-image-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
+wget http://digitall.in.ua/linux-image-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
 echo "Обновляем ядра Linux" 
 dpkg -i *.deb
 read -r -p "Ядро обновлено, перегрузить? (Жмите Enter)" response
