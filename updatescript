@@ -66,33 +66,34 @@ fi
 
 
 chmod 644 /etc/crontab
-ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
-ver="${ver//.}"          # remove periods (a single `/` would do here)
-echo "$ver"
-b="515"
-echo "$b"
-if [ "$ver" != "$b" ];
-then
-cd /update/tmpi/
-echo "Найдены новые ядра для установки"
-wget http://digitall.in.ua/linux-headers-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
-wget http://digitall.in.ua/linux-image-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
-echo "Обновляем ядра Linux" 
-dpkg -i *.deb
-read -r -p "Ядро обновлено, перегрузить? (Жмите Enter)" response
- response=${response,,} # tolower
- if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
- sudo rm -R /update/tmpi && reboot
- fi
-    exit 0;
- fi
- echo " у Вас последнее ядро, обновления не требуются!"   
- sudo apt-get purge linux-image-4.1* -y
- # sudo bash ./AssetUPnP
+#ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
+#ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+#ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
+#ver="${ver//.}"          # remove periods (a single `/` would do here)
+#echo "$ver"
+#b="515"
+#echo "$b"
+#if [ "$ver" != "$b" ];
+#then
+#cd /update/tmpi/
+#echo "Найдены новые ядра для установки"
+#wget http://digitall.in.ua/linux-headers-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
+#wget http://digitall.in.ua/linux-image-5.15.10-rt24_5.15.10-rt24-1_amd64.deb
+#echo "Обновляем ядра Linux" 
+#dpkg -i *.deb
+#read -r -p "Ядро обновлено, перегрузить? (Жмите Enter)" response
+# response=${response,,} # tolower
+# if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+# sudo rm -R /update/tmpi && reboot
+# fi
+#   exit 0;
+# fi
+# echo " у Вас последнее ядро, обновления не требуются!"   
+# sudo apt-get purge linux-image-4.1* -y
+# # sudo bash ./AssetUPnP
  sudo rm -R /update/tmpi
-    sleep 3
-    reboot
-    exit 0;
+ echo " у Вас последнее ядро, обновления не требуются!"   
+ sleep 3
+# reboot
+ exit 0;
        exit 0;
