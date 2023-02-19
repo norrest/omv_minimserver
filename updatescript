@@ -50,8 +50,8 @@ read -r -p "Вы точно хотите обновить minimserver до ве�
  response=${response,,} # tolower
  if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
  wget https://github.com/norrest/omv_minimserver/raw/master/MinimServer-2.2-linux-intel.tar.gz
-/root/minimserver/minimserver-2.1/bin/update MinimServer-2.2-linux-intel.tar.gz
-/root/minimserver/minimserver-2.0.18/bin/update MinimServer-2.2-linux-intel.tar.gz
+/root/minimserver/bin/update MinimServer-2.2-linux-intel.tar.gz
+
  fi
 fi
 
