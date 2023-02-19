@@ -27,13 +27,34 @@ sudo chmod -R 777 /srv/*
 sudo apt-get autoremove -y
 (echo 23456; echo 23456) | smbpasswd -a -s root
 miver="$(ls /opt/minimserver/ | grep minimserver | cut -c13- | tr . 0)" 
-echo "$miver"
-newver="200018"
+miver2="$(ls /root/minimserver/ | grep minimserver | cut -c13- | tr . 0)"
+newver="202"
+
+echo "Попытка обновления minimserver для старых версий до версии 2.2. Текущая версия у вас :"
+ls /opt/minimserver/ | grep minimserver
 if [ "$miver" -ne "$newver" ];
 then
-wget http://digitall.in.ua/MinimServer-2.0.18-linux-intel.tar.gz
-/opt/minimserver/bin/update MinimServer-2.0.18-linux-intel.tar.gz
+read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Если да, жмите Enter, елси нет то Esc" response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+ wget https://github.com/norrest/omv_minimserver/raw/master/MinimServer-2.2-linux-intel.tar.gz
+ /opt/minimserver/bin/update MinimServer-2.2-linux-intel.tar.gz
+ fi
 fi
+
+echo "Попытка обновления minimserver для более новых до версии 2.2. Текущая версия:"
+ls /root/minimserver/ | grep minimserver
+if [ "$miver2" -ne "$newver" ];
+then
+read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Если да, жмите Enter, елси нет то Esc" response
+ response=${response,,} # tolower
+ if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
+ wget https://github.com/norrest/omv_minimserver/raw/master/MinimServer-2.2-linux-intel.tar.gz
+/root/minimserver/minimserver-2.1/bin/update MinimServer-2.2-linux-intel.tar.gz
+/root/minimserver/minimserver-2.0.18/bin/update MinimServer-2.2-linux-intel.tar.gz
+ fi
+fi
+
 chmod 644 /etc/crontab
 ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
 ver="${ver%.*-*}"        # remove suffix starting with '.' and containing '-'
