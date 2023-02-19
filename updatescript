@@ -30,30 +30,40 @@ miver="$(ls /opt/minimserver/ | grep minimserver | cut -c13- | tr . 0)"
 miver2="$(ls /root/minimserver/ | grep minimserver | cut -c13- | tr . 0)"
 newver="202"
 
-echo "Попытка обновления minimserver для старых версий до версии 2.2. Текущая версия у вас :"
+echo ""
+echo "Попытка обновления minimserver для более старых версий до версии 2.2. Текущая уже установленная у вас версия:"
+echo ""
 ls /opt/minimserver/ | grep minimserver
+echo ""
+echo ""
+echo ""
 if [ "$miver" -ne "$newver" ];
 then
-read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Если да, жмите Enter, елси нет то Esc" response
+read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Посмотрите выше, возможно у вас установлена более новая версия!! Если да, жмите Enter, если нет то Esc (или любые буквы) и только после этого Enter" response
  response=${response,,} # tolower
  if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
  wget https://github.com/norrest/omv_minimserver/raw/master/MinimServer-2.2-linux-intel.tar.gz
- /opt/minimserver/bin/update MinimServer-2.2-linux-intel.tar.gz
+/opt/minimserver/bin/update MinimServer-2.2-linux-intel.tar.gz
  fi
 fi
 
-echo "Попытка обновления minimserver для более новых до версии 2.2. Текущая версия:"
+echo ""
+echo "Попытка обновления minimserver для более новых до версии 2.2. Текущая уже установленная у вас версия:"
+echo ""
 ls /root/minimserver/ | grep minimserver
+echo ""
+echo ""
+echo ""
 if [ "$miver2" -ne "$newver" ];
 then
-read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Если да, жмите Enter, елси нет то Esc" response
+read -r -p "Вы точно хотите обновить minimserver до версии 2.2? Посмотрите выше, возможно у вас установлена более новая версия!! Если да, жмите Enter, если нет то Esc (или любые буквы) и только после этого Enter" response
  response=${response,,} # tolower
  if [[ $response =~ ^(yes|y| ) ]] | [ -z $response ]; then
  wget https://github.com/norrest/omv_minimserver/raw/master/MinimServer-2.2-linux-intel.tar.gz
 /root/minimserver/bin/update MinimServer-2.2-linux-intel.tar.gz
-
  fi
 fi
+
 
 chmod 644 /etc/crontab
 ver="$(uname -r)"          # get kernel release version, e.g., "3.10.34-1-MANJARO"
